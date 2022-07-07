@@ -18,12 +18,13 @@ function App() {
             })
             setSocket(resultSocket)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/login" element={<Login setSocket={setSocket} />} />
+                <Route path="/" element={<Login setSocket={setSocket} />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/home" element={<Chat socket={socket} />} />
                 <Route path="/profile" element={<Profile />} />
