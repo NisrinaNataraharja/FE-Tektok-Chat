@@ -3,7 +3,7 @@
 
 ## ✏️ About
 
-Hire job is an app for IT people to find their dream job
+Tektok chat is an app to help you to connect and chat with people around the world anywhere and everywhere !
 
 
 ## 🔖Build With
