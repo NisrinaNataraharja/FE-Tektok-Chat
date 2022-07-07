@@ -1,0 +1,177 @@
+.setting-profile {
+    padding-top: 30px;
+}
+
+.header-setting i {
+    padding-left: 30px;
+    font-size: 30px;
+    color: #7E98DF;
+    cursor: pointer;
+}
+
+.header-setting h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #7E98DF;
+}
+
+.pict-user {
+    padding-left: 40px;
+}
+
+.pict-user:hover Button {
+    display: block;
+    opacity: 0.8;
+}
+
+.pict-user Button {
+    display: none;
+}
+
+.picture-user {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 82px;
+    height: 82px;
+    border-radius: 30px;
+}
+
+.info-username h3 {
+    margin-top: 10px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.165px;
+    color: #232323;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.info-username p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 1.335px;
+    color: #848484;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.account-profile {
+    overflow: auto;
+    width: 390px;
+    height: 425px;
+    margin-top: 30px;
+}
+
+.account-profile::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+.account-profile h1 {
+    margin-top: 30px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 23px;
+    color: #232323;
+}
+
+.account-profile input {
+    margin-right: 5px;
+    padding-left: -50px !important;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 1.335px;
+    color: #232323;
+    padding-left: 0px;
+    border-radius: 0;
+    background: #fff;
+}
+
+.account-profile input:focus {
+    border-bottom: solid #7E98DF;
+}
+
+.account-profile i {
+    margin-left: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.account-profile p {
+    cursor: pointer;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.17px;
+    color: #7E98DF;
+}
+
+.account-profile hr {
+    width: 370px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.account-profile h2,
+.username-input input,
+.bio-input {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #232323;
+}
+
+.bio-input textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+    resize: none;
+}
+
+.account-profile span {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.17px;
+    color: #848484;
+}
+
+.setting p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    color: #232323;
+    margin-left: 30px;
+}
+
+.privacy p {
+    margin-left: 36px;
+}

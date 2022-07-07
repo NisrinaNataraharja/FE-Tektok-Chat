@@ -1,0 +1,68 @@
+.btn-auth {
+  width: 390px;
+  height: 60px;
+  background: #7E98DF;
+  border-radius: 70px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 10px;
+}
+
+.btn-google {
+  padding-left: 35px;
+  width: 390px;
+  height: 60px;
+  background: #FFFFFF;
+  border: 1px solid #7E98DF;
+  box-sizing: border-box;
+  border-radius: 70px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #7E98DF;
+}
+
+.btn-choose-photo {
+  position: absolute;
+  width: 83px;
+  height: 83px;
+  background: #FFFFFF;
+  border: 1px solid #7E98DF;
+  border-radius: 30px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  color: #7E98DF;
+  top: 66px;
+  left: 211px;
+}
+
+.save-data {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  border: 0.4px solid #7E98DF;
+  background: #7E98DF;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+  margin-left: 300px;
+  top: 90px;
+}
