@@ -3,16 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
-// import { findUserById, getAllUser } from "../../configs/redux/actions/user";
-// import { getMessages, deleteHistoryChat } from "../../configs/redux/actions/message"
-
-// toast
-// import { ToastContainer, toast } from 'react-toastify';
-
 // css
 import './chat.css'
-// import 'react-toastify/dist/ReactToastify.css';
-
 import user from "../../assets/images/user.png"
 import iconHumberger from '../../assets/images/Menu.png'
 import newGroup from "../../assets/images/Newgroup.png"
@@ -34,7 +26,7 @@ import Search from "../../assets/images/Search.png"
 // component
 import SettingChat from '../../components/module/Chat/Setting/Profile'
 
-// toast.configure()
+
 function ChatList({ socket }) {
     const navigate = useNavigate()
     const [createChannel, setCreateChannel] = useState(false);
@@ -128,7 +120,7 @@ function ChatList({ socket }) {
 
     const handleLogout = () => {
         localStorage.removeItem("token");
-        navigate("/login");
+        navigate("/");
     }
 
     const handleSendMessage = () => {
@@ -224,7 +216,7 @@ function ChatList({ socket }) {
                             <div className="all-list-chatting">
                                 {friends.length > 1 ?
                                     friends.map((item, index) => {
-                                        console.log(friends);
+                                        //  console.log(item.image);
                                         return (
                                             <>
                                                 <div className="list-chatting d-flex"
@@ -232,7 +224,7 @@ function ChatList({ socket }) {
                                                     onClick={() => handleChat()}
                                                 >
                                                     <img
-                                                        src={friends[1].image ? friends[1].image : user}
+                                                        src={item.image ? item.image : user}
                                                         alt="user pict" width="64" height="64" />
                                                     <div className="ml-3">
                                                         <h1 onClick={() => chooseFriend(item)} >{item.name}</h1>
@@ -307,7 +299,7 @@ function ChatList({ socket }) {
                                 {/* isi chat */}
                                 <div className="messages-user ">
                                     {messages.map((item, index) =>
-                                    item.receiver_id !== friend.id ? (
+                                     item.receiver_id === friend.id ? (
                                         <>
                                             <div className="sender d-flex justify-content-end align-items-start" key={index}>
                                                 <p>{item.created_at}</p>
@@ -318,7 +310,7 @@ function ChatList({ socket }) {
                                             </div>
                                         </>
                                         ):
-                                        item.receiver_id === friend.id ? (
+                                        item.receiver_id !== friend.id ? (
                                         <>
                                             <div className="receive d-flex justify-content-start align-items-end" key={index}>
                                             <div className="chat-message-to " >

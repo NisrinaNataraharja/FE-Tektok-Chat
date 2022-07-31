@@ -1,4 +1,5 @@
 import axios from "axios";
+import axiosApiInstance from "../../../helper/axios";
 
 const registerRequest = () => {
   return { type: "REGISTER_REQUEST" };
@@ -44,6 +45,48 @@ export const login = (data) => (dispatch) => {
       })
       .catch((err) => {
         reject(err.response.data.message);
+      });
+  });
+};
+
+export const userProfile = () => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const token = localStorage.getItem("token");
+    const Url = process.env.REACT_APP_TEKTOK_API;
+    axios.get(`${Url}user/profile` , {
+      headers: { Authorization: `Bearer ${token}` }}).then((res) => {
+      resolve(res.data.data);
+    });
+  });
+};
+
+export const getUser = () => {
+  return (dispatch) => {
+    const token = localStorage.getItem("token");
+    const Url = process.env.REACT_APP_TEKTOK_API;
+    axios.get(`${Url}user/profile` , {
+      headers: { Authorization: `Bearer ${token}` }}).then((res) => {
+        console.log(res.data);
+      dispatch({
+        type: "GET_USER",
+        payload: res.data.data
+      });
+    });
+  };
+};
+
+export const update = (data) => (dispatch) => {
+  const token = localStorage.getItem("token");
+  return new Promise((resolve, reject) => {
+    const Url = process.env.REACT_APP_TEKTOK_API;
+    axios
+      .put(`${Url}user/update`, data , {
+        headers: { Authorization: `Bearer ${token}` }})
+      .then((res) => {
+        resolve(res.data.message);
+      })
+      .catch((err) => {
+        reject(new Error(err.response.data.message));
       });
   });
 };
