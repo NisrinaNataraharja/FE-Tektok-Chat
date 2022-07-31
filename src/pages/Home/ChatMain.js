@@ -263,7 +263,7 @@ function ChatList({ socket }) {
                             <div className="aside-chatting">
                                 <div className="header-chat-message">
                                     <div className="header-chat-profile d-flex">
-                                        <img src={user} alt="user pict" width="64" height="64" />
+                                        <img src={friend.image ? friend.image : user} alt="user pict" width="64" height="64" />
                                         <div className="ml-3">
                                             <h2>{friend.name ? friend.name : 'friend'}</h2>
                                             <p>Online</p>

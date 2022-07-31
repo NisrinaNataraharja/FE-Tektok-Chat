@@ -1,5 +1,4 @@
 import axios from "axios";
-import axiosApiInstance from "../../../helper/axios";
 
 const registerRequest = () => {
   return { type: "REGISTER_REQUEST" };
