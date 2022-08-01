@@ -5,6 +5,7 @@ import Register from '../../pages/Auth/Register';
 import Chat from '../../pages/Home/ChatMain'
 import Profile from '../../pages/profile';
 import io from 'socket.io-client'
+import Auth from '../../components/base/Auth';
 
 function App() {
     const [socket, setSocket] = useState(null)
@@ -26,8 +27,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login setSocket={setSocket} />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/home" element={<Chat socket={socket} />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/home" element={<Auth> <Chat socket={socket} /> </Auth>} />
+                <Route path="/profile" element={<Auth><Profile /></Auth>} />
             </Routes>
         </BrowserRouter>
     );

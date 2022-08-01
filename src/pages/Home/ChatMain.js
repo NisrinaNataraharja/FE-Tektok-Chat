@@ -21,6 +21,8 @@ import Profilemenu from "../../assets/images/Profilemenu.png"
 import deleteChat from "../../assets/images/deleteChat.png"
 import Mute from "../../assets/images/Mute.png"
 import Search from "../../assets/images/Search.png"
+import Moment from "react-moment";
+import "moment-timezone";
 
 
 // component
@@ -55,16 +57,16 @@ function ChatList({ socket }) {
             })
     }, [])
 
-    useEffect(()=>{
-        if(socket){
-          socket.off('newMessage')
-          socket.on('newMessage', (message)=>{
-            setMessages((current)=>[...current, message])
-            console.log(message);
-          })
+    useEffect(() => {
+        if (socket) {
+            socket.off('newMessage')
+            socket.on('newMessage', (message) => {
+                setMessages((current) => [...current, message])
+                console.log(message);
+            })
         }
-        
-      },[socket])
+
+    }, [socket])
 
     useEffect(() => {
         const token = localStorage.getItem('token')
@@ -78,7 +80,7 @@ function ChatList({ socket }) {
             .then((res) => {
                 const messages = res.data.data;
                 setMessages(messages);
-            })    
+            })
     }, [friend])
 
 
@@ -216,7 +218,7 @@ function ChatList({ socket }) {
                             <div className="all-list-chatting">
                                 {friends.length > 1 ?
                                     friends.map((item, index) => {
-                                        //  console.log(item.image);
+                                        //  console.log(item);
                                         return (
                                             <>
                                                 <div className="list-chatting d-flex"
@@ -225,8 +227,10 @@ function ChatList({ socket }) {
                                                 >
                                                     <img
                                                         src={item.image ? item.image : user}
-                                                        alt="user pict" width="64" height="64" />
-                                                    <div className="ml-3">
+                                                        alt="user pict" width="64" height="64"
+                                                        style={{ borderRadius: "25px" }}
+                                                    />
+                                                    <div className="ms-3">
                                                         <h1 onClick={() => chooseFriend(item)} >{item.name}</h1>
                                                         <p className="last-message">{item.message}</p>
                                                     </div>
@@ -263,8 +267,8 @@ function ChatList({ socket }) {
                             <div className="aside-chatting">
                                 <div className="header-chat-message">
                                     <div className="header-chat-profile d-flex">
-                                        <img src={friend.image ? friend.image : user} alt="user pict" width="64" height="64" />
-                                        <div className="ml-3">
+                                        <img src={friend.image ? friend.image : user} alt="user pict" width="64" height="64" style={{ borderRadius: "25px" }} />
+                                        <div className="ms-3">
                                             <h2>{friend.name ? friend.name : 'friend'}</h2>
                                             <p>Online</p>
                                         </div>
@@ -299,28 +303,36 @@ function ChatList({ socket }) {
                                 {/* isi chat */}
                                 <div className="messages-user ">
                                     {messages.map((item, index) =>
-                                     item.receiver_id === friend.id ? (
-                                        <>
-                                            <div className="sender d-flex justify-content-end align-items-start" key={index}>
-                                                <p>{item.created_at}</p>
-                                                <div className="chat-message-from ">
-                                                    <div >{item.message}</div>
-                                                </div>
-
-                                            </div>
-                                        </>
-                                        ):
-                                        item.receiver_id !== friend.id ? (
-                                        <>
-                                            <div className="receive d-flex justify-content-start align-items-end" key={index}>
-                                            <div className="chat-message-to " >
-                                                        <div>{item.message}</div>
+                                        item.receiver_id === friend.id ? (
+                                            <>
+                                                <div className="sender d-flex justify-content-end align-items-start" key={index}>
+                                                    <p>
+                                                        <Moment format="DD/MM/LT">
+                                                            {item.created_at}
+                                                        </Moment>
+                                                    </p>
+                                                    <div className="chat-message-from ">
+                                                        <div >{item.message}</div>
                                                     </div>
-                                                    <p>{item.created_at}</p>
+
                                                 </div>
-                                        </>
-                                        ):(
-                                            ""
+                                            </>
+                                        ) :
+                                            item.receiver_id !== friend.id ? (
+                                                <>
+                                                    <div className="receive d-flex justify-content-start align-items-end" key={index}>
+                                                        <div className="chat-message-to " >
+                                                            <div>{item.message}</div>
+                                                        </div>
+                                                        <p>
+                                                        <Moment format="DD/MM/LT">
+                                                            {item.created_at}
+                                                        </Moment>
+                                                        </p>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                ""
                                             )
                                     )}
 

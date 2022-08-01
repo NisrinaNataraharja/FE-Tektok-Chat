@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import UserProfile from "../../../../assets/images/UserProfile.png"
+import UserImage from "../../../../assets/images/UserProfile.png"
 import Union from "../../../../assets/images/Union.png"
 import PrivacySecurity from "../../../../assets/images/security.png"
 import dataStorage from "../../../../assets/images/dataStorage.png"
@@ -125,7 +125,7 @@ function SettingChat(props) {
                 ) : (
                     <img
                         className="picture-user"
-                        src={UserProfile}
+                        src={user.image? user.image : UserImage}
                         alt="pict profil"
                     />
                 )}
