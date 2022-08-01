@@ -15,7 +15,7 @@ const registerFailure = (error) => {
 
 export const register = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
-    const Url = process.env.REACT_APP_TEKTOK_API;
+    const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
     dispatch(registerRequest());
     axios
       .post(`${Url}user/register`, data)
@@ -33,7 +33,7 @@ export const register = (data) => (dispatch) => {
 
 export const login = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
-    const Url = process.env.REACT_APP_TEKTOK_API;
+    const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
     axios
       .post(`${Url}user/login`, data)
       .then((res) => {
@@ -51,7 +51,7 @@ export const login = (data) => (dispatch) => {
 export const userProfile = () => (dispatch) => {
   return new Promise((resolve, reject) => {
     const token = localStorage.getItem("token");
-    const Url = process.env.REACT_APP_TEKTOK_API;
+    const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
     axios.get(`${Url}user/profile` , {
       headers: { Authorization: `Bearer ${token}` }}).then((res) => {
       resolve(res.data.data);
@@ -62,7 +62,7 @@ export const userProfile = () => (dispatch) => {
 export const getUser = () => {
   return (dispatch) => {
     const token = localStorage.getItem("token");
-    const Url = process.env.REACT_APP_TEKTOK_API;
+    const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
     axios.get(`${Url}user/profile` , {
       headers: { Authorization: `Bearer ${token}` }}).then((res) => {
         console.log(res.data);
@@ -77,7 +77,7 @@ export const getUser = () => {
 export const update = (data) => (dispatch) => {
   const token = localStorage.getItem("token");
   return new Promise((resolve, reject) => {
-    const Url = process.env.REACT_APP_TEKTOK_API;
+    const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
     axios
       .put(`${Url}user/update`, data , {
         headers: { Authorization: `Bearer ${token}` }})

@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (!socket && token) {
-            const resultSocket = io(process.env.REACT_APP_TEKTOK_API_BE, {
+            const resultSocket = io(process.env.REACT_APP_TEKTOK_API_HEROKU, {
                 query:{
                     token: token
                 }

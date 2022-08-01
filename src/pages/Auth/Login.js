@@ -29,7 +29,7 @@ const Login = ({setSocket}) => {
             dispatch(login(values))
                 .then((res) => {
                     // console.log(res.data.token);
-                    const resultSocket = io(process.env.REACT_APP_TEKTOK_API_BE, {
+                    const resultSocket = io(process.env.REACT_APP_TEKTOK_API_HEROKU, {
                         query:{
                             token: res.data.token
                         }      

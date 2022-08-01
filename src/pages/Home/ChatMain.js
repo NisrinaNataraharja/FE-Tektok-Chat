@@ -44,7 +44,7 @@ function ChatList({ socket }) {
 
     useEffect(() => {
         const token = localStorage.getItem('token')
-        const Url = process.env.REACT_APP_TEKTOK_API;
+        const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
         axios
             .get(`${Url}user/profileUser`, {
                 headers: {
@@ -70,7 +70,7 @@ function ChatList({ socket }) {
 
     useEffect(() => {
         const token = localStorage.getItem('token')
-        const Url = process.env.REACT_APP_TEKTOK_API;
+        const Url = process.env.REACT_APP_TEKTOK_API_HEROKU;
         axios
             .get(`${Url}message/${friend.id}`, {
                 headers: {
