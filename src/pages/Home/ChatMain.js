@@ -30,6 +30,7 @@ import SettingChat from '../../components/module/Chat/Setting/Profile'
 
 
 function ChatList({ socket }) {
+    console.log(socket);
     const navigate = useNavigate()
     const [createChannel, setCreateChannel] = useState(false);
     const [createOption, setcreateOption] = useState(false);
@@ -127,6 +128,8 @@ function ChatList({ socket }) {
 
     const handleSendMessage = () => {
         if (socket && message) {
+            console.log(socket);
+            console.log('haloooo');
             socket.emit('sendMessage', {
                 idReceiver: friend.id,
                 idSender: socket.userId,
@@ -136,6 +139,7 @@ function ChatList({ socket }) {
                     setMessages((current) => [...current, message]);
                 }
             );
+            console.log('lohaaaa');
         }
         setMessage('')
     };

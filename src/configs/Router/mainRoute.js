@@ -13,7 +13,7 @@ function App() {
         const token = localStorage.getItem('token')
         if (!socket && token) {
             //heroku
-            const resultSocket = io(process.env.REACT_APP_TEKTOK_API_HEROKU, {
+            const resultSocket = io("https://tektok-chat.herokuapp.com" , {
                 query:{
                     token: token
                 },

@@ -28,12 +28,14 @@ const Login = ({setSocket}) => {
         onSubmit: values => {
             dispatch(login(values))
                 .then((res) => {
+                    console.log('login masuk');
                     // console.log(res.data.token);
-                    const resultSocket = io(process.env.REACT_APP_TEKTOK_API_HEROKU, {
+                    const resultSocket = io("https://tektok-chat.herokuapp.com", {
                         query:{
                             token: res.data.token
                         }      
                     })
+                    console.log(resultSocket);
                     setSocket(resultSocket)
                     Swal.fire({
                         title: "Success!",
