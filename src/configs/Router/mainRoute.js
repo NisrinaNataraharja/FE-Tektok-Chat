@@ -15,7 +15,8 @@ function App() {
             const resultSocket = io(process.env.REACT_APP_TEKTOK_API_HEROKU, {
                 query:{
                     token: token
-                }
+                },
+                transports: ["websocket", "polling"] 
             })
             setSocket(resultSocket)
         }
