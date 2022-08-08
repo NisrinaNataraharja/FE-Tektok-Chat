@@ -47,6 +47,10 @@ npm install
 | ------------- | ------------- |
 | ![Chat](/public/assets/screenshoot/chat.png?raw=true "Landing Page") | ![Profile Page](/public/assets/screenshoot/profile.png?raw=true "Recipe Detail Page") |
 
+| Menu Page  | 
+| ------------- |
+| ![Menu](/public/assets/screenshoot/menu.png?raw=true "Menu Page") |
+
 
 ## ✍️ Authors
 
